@@ -1,5 +1,5 @@
 body {
-  background: #c7c7c7;
+  background:#babdbe;
   color: #333333;
   margin-top: 5rem;
 }
@@ -9,7 +9,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-steel {
-  background-color: #1c313a;
+  background-color:#62757f;
+  paddimg:70px;
 }
 
 .site-header .navbar-nav .nav-link {
@@ -24,9 +25,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
 
-.content-section, .wil {
-  margin-left: 50%;
-  text-align: center;
+.content-section {
   padding: 10px 20px;
   margin-bottom: 20px;
 }
@@ -77,8 +76,10 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
-
-.card{
+.pad{
   margin-bottom: 3%;
+  
+}
+.card{
   background: transparent;
 }
