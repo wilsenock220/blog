@@ -9,6 +9,7 @@ from flaskblog.forms import (RegistrationForm, LoginForm,
 from flaskblog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
+from .requests import get_quotes
 
 
 @app.route("/")
@@ -19,8 +20,10 @@ def home():
 
 
 @app.route("/quote")
-def about():
-    return render_template('quote.html', title='About')
+def quote():
+    quotes = get_quotes()
+
+    return render_template('quote.html', quotes=quotes)
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -197,11 +200,3 @@ def reset_token(token):
     return render_template('reset_token.html', title='Reset Password', form=form)
 
 
-@app.route('/quote/')
-def quote():
-
-    '''
-    View function for random quote
-    '''
-    quote = get_quote()
-    return render_template('quote.html',quote = quote) 

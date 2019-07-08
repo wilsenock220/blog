@@ -1,17 +1,14 @@
-import urllib.request.json
+import urllib.request,json
 
-base_url = None
+def get_quotes():
+   '''
+   Function that gets the json response to our url request
+   '''
+   get_quotes_url = 'http://quotes.stormconsultancy.co.uk/random.json'
 
+   with urllib.request.urlopen(get_quotes_url) as url:
+       quotes = url.read()
+       get_sources_response = json.loads(quotes)
+       print(quotes)
 
-
-
-def get_quote():
-    get_quote_url = 'http://quotes.stormconsultancy.co.uk/random.json'
-
-
-    with urllib.request.urlopen(get_quote_url) as url:
-        get_quote_data = url.read()
-        get_quote_response = json.loads(get_quote_data)
-
-    return get_quote_response
-
+   return get_sources_response

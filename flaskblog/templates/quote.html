@@ -1,7 +1,17 @@
 {% extends 'layout.html' %}
 {% block content %}
 
- <p>Quote: {{ quote.author }}</p>
- <p>Author: {{ quote.author }}</p>
+<!-- Card -->
+<div class="card testimonial-card">
+    <!-- Content -->
+    <div class="card-body">
+        <!-- Name -->
+        <h5 class="card-title">{{quotes.quote}}</h5>
+        <hr>
+        <!-- Quotation -->
+        <p><i class="fas fa-quote-left"></i>{{quotes.author}}</p>
+    </div>
 
-{{ endblock }}
+</div>
+<!-- Card -->
+{% endblock content %}
