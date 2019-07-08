@@ -1,6 +1,7 @@
 import os
 import secrets
 from PIL import Image
+
 from flask import render_template, url_for, flash, redirect, request, abort
 from flaskblog import app, db, bcrypt, mail
 from flaskblog.forms import (RegistrationForm, LoginForm,
@@ -17,9 +18,9 @@ def home():
     return render_template('home.html', posts=posts)
 
 
-@app.route("/about")
+@app.route("/quote")
 def about():
-    return render_template('about.html', title='About')
+    return render_template('quote.html', title='About')
 
 
 @app.route("/register", methods=['GET', 'POST'])
@@ -194,3 +195,13 @@ def reset_token(token):
         flash('Your password has been updated! You are now able to log in', 'success')
         return redirect(url_for('login'))
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+@app.route('/quote/')
+def quote():
+
+    '''
+    View function for random quote
+    '''
+    quote = get_quote()
+    return render_template('quote.html',quote = quote) 
