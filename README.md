@@ -41,7 +41,7 @@ This is an online platform where a user can write his own blogs, read blogs from
 
 #### Clone the Repo and rename it to suit your needs.
 ```bash
-git clone https://github.com/JamesMutahi/flask-blog.git
+git clone https://github.com/wilsenock220/blog.git
 ```
 #### Initialize git and add the remote repository
 ```bash
@@ -95,7 +95,7 @@ Create an issue mentioning the bug you have found
 
 
 ## Support and contact details
-Contact [James Mutahi](wilsenock220@gmail.com) for further help/support
+Contact [Wilstan Onditi](wilsenock220@gmail.com) for further help/support
 
 ### License
 [MIT LICENSE](LICENCE)
