@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+
+{% block styles%}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+{% block content %}
+<div style="height: 100vh; margin-top: -7%">
+    <div class="flex-center flex-column">
+        <div style="padding: 20px; margin-top:4%">
+            <h2>Random Quote</h2>
+        </div>
+        <hr>
+        <div class="col-md-8">
+            <div class="card testimonial-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{quotes.quote}}</h5>
+                    <hr>
+                    <p><i class="fas fa-quote-left"></i>{{quotes.author}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <div class="row">
+
+    </div>
+    <br>
+    <div class="row" style="margin-top: -30%; color: black">
+        {%for blog in blogs%}
+        <div class="col-md-6">
+            <!-- Card -->
+            <div class="card ">
+
+                <div class="text-white text-center d-flex align-items-center rgba-black-strong py-5 px-4">
+                    <div class="card">
+                        <h4 class="card-header" style="color: black"><strong>{{blog.blog_title}}</strong></h4>
+                        <p class="card-body" style="color: black">{{blog.blog}}</p>
+                        <div class="card-footer">
+                            <a href="{{url_for('main.new_comment',id=blog.id)}}" class="btn btn-blue"><i
+                                    class="far fa-comments"></i> Comments</a>
+                            {% if current_user.role_id == 1 %}
+                            <a href="{{url_for('main.delete_blog',id= blog.id)}}" class="btn btn-blue"><i
+                                    class="far fa-trash-alt"></i> Delete Blog</a>
+                            <a href="{{url_for('main.update_blog',id= blog.id)}}" class="btn btn-blue"><i
+                                    class="far fa-edit"></i> Update Blog</a>
+                            {%endif%}
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Card --> <br>
+        </div><br>
+        {% endfor %}
+        <br>
+    </div>
+</div>
+
+{% endblock%}

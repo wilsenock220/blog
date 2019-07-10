@@ -1,0 +1,2 @@
+Hello {{current_user.username}}
+i,ve just written a new blog
